@@ -60,7 +60,7 @@ class ApiClient {
             .addInterceptor(okHttpInterceptor)
             .build()
 
-        fun create(): ApiService {
+        fun getInstance(): ApiService {
 
             val retrofit = Retrofit.Builder()
                 .client(okHttpClient)

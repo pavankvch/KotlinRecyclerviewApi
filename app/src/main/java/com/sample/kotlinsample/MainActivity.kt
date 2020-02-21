@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getEmployeesApi() {
 
-        ApiClient.create().getEmployees()
+        ApiClient.getInstance().getEmployees()
             .enqueue(object : Callback<EmployeeResponse> {
                 override fun onFailure(call: Call<EmployeeResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
@@ -45,7 +45,9 @@ class MainActivity : AppCompatActivity() {
                         println(response.body())
                         var listOfEmployes: List<Data> = response.body()?.data!!
                         myCustomAdapter = MyAdapter(applicationContext, listOfEmployes)
-                        rvEmployees.setAdapter(myCustomAdapter)
+//                        rvEmployees.setAdapter(myCustomAdapter)
+
+                        rvEmployees?.adapter = myCustomAdapter
                     }
 
                 }
