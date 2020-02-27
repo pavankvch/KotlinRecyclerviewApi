@@ -37,7 +37,7 @@ class EmployeeActivity : AppCompatActivity() {
 
         val service = APIClient.getInstance()
         CoroutineScope(Dispatchers.IO).launch {
-            val response = service.getEmployees()
+            val response = service.getEmployeesList()
             try {
                 withContext(Dispatchers.Main) {
                     if (response.isSuccessful) {
