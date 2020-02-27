@@ -11,5 +11,5 @@ interface ApiService {
     
     
         @GET("/api/users?page=2")
-    suspend fun getEmployees(): Response<EmployeeResponse>
+    suspend fun getEmployeesList(): Response<EmployeeResponse>
 }
