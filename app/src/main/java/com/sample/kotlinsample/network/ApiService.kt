@@ -8,4 +8,8 @@ interface ApiService {
 
     @GET("/api/users?page=2")
     fun getEmployees(): Call<EmployeeResponse>
+    
+    
+        @GET("/api/users?page=2")
+    suspend fun getEmployees(): Response<EmployeeResponse>
 }
